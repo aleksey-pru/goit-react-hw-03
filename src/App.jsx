@@ -6,7 +6,12 @@ import SearchBox from "./components/SeacrhBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
 
 function App() {
-  const [contacts, setContacts] = useState(initialContact);
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = localStorage.getItem("contacts");
+    return savedContacts && savedContacts !== "[]"
+      ? JSON.parse(savedContacts)
+      : initialContact;
+  });
   const [search, setSearch] = useState("");
 
   const savedContacts = localStorage.getItem("contacts");
