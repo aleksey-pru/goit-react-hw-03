@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px;
+}
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 5px;
+}
+.name {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
